@@ -1,24 +1,26 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class Boxeur {
 private:
-    std::string nom;
+    string nom;
     double poids;
 
 public:
     // Constructeur
-    Boxeur(const std::string& nom, double poids) : nom(nom), poids(poids) {
-        std::cout << "Constructeur de Boxeur : " << nom << std::endl;
+    Boxeur(const string& nom, double poids) : nom(nom), poids(poids) {
+        cout << "Constructeur de Boxeur : " << nom << endl;
     }
 
     // Destructeur
     ~Boxeur() {
-        std::cout << "Destructeur de Boxeur : " << nom << std::endl;
+        cout << "Destructeur de Boxeur : " << nom << endl << endl;
     }
 
     // Méthode d'accès en lecture pour le nom
-    std::string getNom() const {
+    string getNom() const {
         return nom;
     }
 
