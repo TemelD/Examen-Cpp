@@ -5,31 +5,34 @@
 using namespace std;
 int main()
 {
-    Boxeur boxeur_1("Box_1", 75.0);
+    Boxeur boxeur_1("Boxeur 1", 75.0);
 
     // info de boxeur_1
-    cout << "boxeur_1 - Adresse : " << &boxeur_1 << endl;
+    cout << "boxeur 1 - Adresse : " << &boxeur_1 << endl;
     cout << "Nom : " << boxeur_1.getNom() << endl;
     cout << "Poids : " << boxeur_1.getPoids() << " kg" << endl << endl;
 
     // Instanciation dynamique de boxeur_2
-    Boxeur* boxeur_2 = new Boxeur("Box_2", 78.0);
+    Boxeur* boxeur_2 = new Boxeur("Boxeur 2", 78.0);
 
     // info de boxeur_2
-    cout << "boxeur_2 - Adresse : " << boxeur_2 << endl;
+    cout << "boxeur 2 - Adresse : " << boxeur_2 << endl;
     cout << "Nom : " << boxeur_2->getNom() << endl;
     cout << "Poids : " << boxeur_2->getPoids() << " kg" << endl << endl;
 
     // Libération de la mémoire allouée dynamiquement pour boxeur_2
-    delete boxeur_2;
+    
 
     // Instanciation automatique de combat_1
-    Combat combat_1("Comb_1_1/8");
+    Combat combat_1("1/8");
 
-    // infor combat_1
-    cout << "combat_1 - Adresse : " << &combat_1 << endl;
+    ///////////////////////////////////////////////////////////////////
+    combat_1.setCoinBleu(&boxeur_1);
+    cout << "combat 1 - Adresse : " << &combat_1 << endl;
     cout << "Niveau : " << combat_1.getNiveau() << endl << endl;
+    cout << "Coin bleu : " << combat_1.getCoinBleu()->getNom() << endl;
 
+delete boxeur_2;
     return 0;
 }
 

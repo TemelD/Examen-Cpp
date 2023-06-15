@@ -19,17 +19,13 @@ public:
         cout << "Destructeur de Boxeur : " << nom << endl << endl;
     }
 
-    // Méthode d'accès en lecture pour le nom
-    string getNom() const {
-        return nom;
-    }
+    // Méthode pour accéder au nom
+    string getNom() { return nom; }
 
-    // Méthode d'accès en lecture pour le poids
-    double getPoids() const {
-        return poids;
-    }
+    // Méthode pour accéder au poids
+    double getPoids() { return poids; }
 
-    // Méthode de modification pour le poids
+    // Méthode pour modifié le poids
     void setPoids(double nouveauPoids) {
         poids = nouveauPoids;
     }
