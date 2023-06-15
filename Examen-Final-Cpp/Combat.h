@@ -8,10 +8,11 @@ private:
     string niveau;
     Boxeur* coinBleu;
     Boxeur* coinRouge;
+    Boxeur* vainqueur;
 
 public:
     // Constructeur
-    Combat(const string& niveau) : niveau(niveau), coinBleu(nullptr), coinRouge(nullptr) {
+    Combat(const string& niveau) : niveau(niveau), coinBleu(nullptr), coinRouge(nullptr), vainqueur(nullptr) {
         cout << "Constructeur de Combat : Niveau " << niveau << endl;
     }
 
@@ -42,4 +43,16 @@ public:
 
     // Getter pour l'attribut coinRouge
     Boxeur* getCoinRouge() { return coinRouge; }
+
+    // Setter pour l'attribut Vainqueur
+    void setVainqueur(const string& couleur) {
+        if (couleur == "bleu") {
+            vainqueur = coinBleu;
+        }
+        else if (couleur == "rouge") {
+            vainqueur = coinRouge;
+        }
+    }
+
+    Boxeur* getVainqueur() { return vainqueur; }
 };

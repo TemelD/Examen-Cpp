@@ -5,6 +5,7 @@
 using namespace std;
 int main()
 {
+    // Instanciation du boxeur 1
     Boxeur boxeur_1("Boxeur 1", 75.0);
 
     // info de boxeur_1
@@ -23,16 +24,23 @@ int main()
     // Libération de la mémoire allouée dynamiquement pour boxeur_2
     
 
-    // Instanciation automatique de combat_1
+    // Instanciationde combat_1
     Combat combat_1("1/8");
 
-    ///////////////////////////////////////////////////////////////////
+    //Instanciation du coin bleu et coin rouge
     combat_1.setCoinBleu(&boxeur_1);
+    combat_1.setCoinRouge(boxeur_2);
+
+    // Info du combat
     cout << "combat 1 - Adresse : " << &combat_1 << endl;
     cout << "Niveau : " << combat_1.getNiveau() << endl << endl;
     cout << "Coin bleu : " << combat_1.getCoinBleu()->getNom() << endl;
 
-delete boxeur_2;
+    // Info du vainqueur
+    combat_1.setVainqueur("rouge");
+    cout << "Vainqueur : " << combat_1.getVainqueur()->getNom() << endl;
+
+    delete boxeur_2;
     return 0;
 }
 
