@@ -8,10 +8,14 @@ private:
 
 public:
     // Constructeur
-    Boxeur(const std::string& nom, double poids) : nom(nom), poids(poids);
+    Boxeur(const std::string& nom, double poids) : nom(nom), poids(poids) {
+        std::cout << "Constructeur de Boxeur : " << nom << std::endl;
+    }
 
     // Destructeur
-    ~Boxeur();
+    ~Boxeur() {
+        std::cout << "Destructeur de Boxeur : " << nom << std::endl;
+    }
 
     // Méthode d'accès en lecture pour le nom
     std::string getNom() const {

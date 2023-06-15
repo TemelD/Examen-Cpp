@@ -1,11 +1,29 @@
-// Examen-Final-Cpp.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
-//
+
 
 #include <iostream>
+#include "Boxeur.h"
 
 int main()
 {
-    std::cout << "Hello Worl!\n";
+    Boxeur boxeur_1("Box_1", 75.0);
+
+    // info de boxeur_1
+    std::cout << "boxeur_1 - Adresse : " << &boxeur_1 << std::endl;
+    std::cout << "Nom : " << boxeur_1.getNom() << std::endl;
+    std::cout << "Poids : " << boxeur_1.getPoids() << " kg" << std::endl;
+
+    // Instanciation dynamique de boxeur_2
+    Boxeur* boxeur_2 = new Boxeur("Box_2", 78.0);
+
+    // info de boxeur_2
+    std::cout << "boxeur_2 - Adresse : " << boxeur_2 << std::endl;
+    std::cout << "Nom : " << boxeur_2->getNom() << std::endl;
+    std::cout << "Poids : " << boxeur_2->getPoids() << " kg" << std::endl;
+
+    // Libération de la mémoire allouée dynamiquement pour boxeur_2
+    delete boxeur_2;
+
+    return 0;
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
